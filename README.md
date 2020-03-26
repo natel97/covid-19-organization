@@ -1,68 +1,48 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# COVID-19 Volunteering Prototype
 
-## Available Scripts
+## Background
 
-In the project directory, you can run:
+I'm a software engineer who is fortunate enough to still have a job, but not everyone is that lucky. I wanted to use some of my spare time after work to maybe work towards an app to do something about the outbreak. I have relatives who have been laid off and have spare time, but don't want to work retail to avoid exposure. They also don't have medical skills.
 
-### `yarn start`
+Based on that, I got to thinking. There has to be something that we can do to mobilize people to do something, while not risking too much exposure. One of my coworkers recently said she was sewing masks for people in the area, and I thought, why can't we encourage others to do so, too? And why can't we get in contact with people who may need it. There has to be a way to do that.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+That's what this anticipates to be. Maybe we'll be lucky and this won't be needed and this will be over with soon, but just in case I figured I'd work on this.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Direction
 
-### `yarn test`
+I'm a developer with 2 years of experience, so I'm not entirely sure of some best practices. But I will do my best to paint a clear picture of what I'd like this to become.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### General Initial Prototype
 
-### `yarn build`
+The first step is to make something basic that works. I've defined that as
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Create a user with basic info
+- User can volunteer -- offer to
+  - Cook meals for those in need
+  - Transport meals to those in need
+  - Make house calls and check up on people
+  - Sew masks
+- User can request help -- Ask for
+  - Meals
+  - A Mask
+  - Periodic Phone Calls / Check ins / Social discussion
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Make It Barely Usable
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Next, we make it into a testing phase where we can add users to get basic feedback on direction, practicality, etc. That includes
 
-### `yarn eject`
+- User has to verify phone number (safety purposes)
+- Volunteering becomes measureable -- Track when a user
+  - Cooks one of three different meals
+  - Say they made a mask
+- Requesting help shows data
+  - Requesting a mask shows the number of
+    - Masks requested within 60 miles (100km)
+    - Masks created within 60 miles
+  - Requesting a meal shows
+    - Each meal and the number requested and created within 60 miles
+  - Requesting house calls gives you a form to specify how often and what time. **This should be a prioritized feature to get something out the door.**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Next we work with the logistics and transportation
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+To be completed
