@@ -1,6 +1,6 @@
 # COVID-19 Volunteering Prototype
 
-[See it live!](covid.nathaniallubitz.com)
+[See it live!](https://covid.nathaniallubitz.com)
 
 ## Background
 
