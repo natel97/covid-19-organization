@@ -14,11 +14,22 @@ export default () => {
       </label>
 
       <div class="menu">
-        <Link to="#" className="pseudo button icon-picture">
-          Demo
+        <Link to="/volunteer" className="pseudo button icon-picture">
+          Volunteer
         </Link>
-        <Link to="#" className="button icon-puzzle">
-          Plugins
+        <Link to="/help" className="pseudo button icon-picture">
+          Get help
+        </Link>
+        <a
+          href="https://github.com/natel97/covid-19-organization"
+          className="pseudo button icon-picture"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Github
+        </a>
+        <Link to="/" className="button icon-puzzle">
+          Sign Out
         </Link>
       </div>
     </nav>

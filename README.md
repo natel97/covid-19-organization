@@ -1,5 +1,7 @@
 # COVID-19 Volunteering Prototype
 
+[See it live!](covid.nathaniallubitz.com)
+
 ## Background
 
 I'm a software engineer who is fortunate enough to still have a job, but not everyone is that lucky. I wanted to use some of my spare time after work to maybe work towards an app to do something about the outbreak. I have relatives who have been laid off and have spare time, but don't want to work retail to avoid exposure. They also don't have medical skills.
