@@ -9,8 +9,8 @@ export default () => {
   const [activities] = useState(mockVolunteerOpportunities());
   return (
     <div className="flex-column full-height">
-      <h1 className="text-center">My Volunteering Activities</h1>
-      <div style={{ background: "#ccc" }} className="flex-1">
+      <h3 className="text-center">My Volunteering Activities</h3>
+      <div style={{ background: "#ccc" }} className="flex-1 overflow-auto">
         {activities
           .sort((a, b) => b.localDemand - a.localDemand)
           .map(({ name, description, localDemand }) => (
@@ -21,7 +21,7 @@ export default () => {
           ))}
       </div>
       <Link to="/volunteer/add">
-        <button className="success full-width">Add Opportunities</button>
+        <button className="info full-width">See All Opportunities</button>
       </Link>
     </div>
   );

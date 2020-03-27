@@ -1,9 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default () => {
+  const { pathname } = useLocation();
+
   return (
     <nav>
+      {pathname !== "/" && (
+        <Link
+          className="brand border-right"
+          to={pathname.substring(0, pathname.lastIndexOf("/"))}
+        >
+          <span>&#8249;</span>
+        </Link>
+      )}
       <Link to="/" className="brand">
         <span>Home</span>
       </Link>

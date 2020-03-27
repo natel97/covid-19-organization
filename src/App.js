@@ -6,6 +6,11 @@ import MyList from "./Routes/Volunteer/MyList";
 import Navbar from "./Components/Navbar";
 import CreateAccount from "./Routes/CreateAccount/CreateAccount";
 import AddMore from "./Routes/Volunteer/AddMore";
+import HelpHome from "./Routes/GetHelp/HelpHome";
+import {
+  mockVolunteerOpportunities,
+  mockHelpOptions
+} from "./Components/MockData";
 
 export default () => {
   return (
@@ -14,10 +19,21 @@ export default () => {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/volunteer/add" component={AddMore} />
+
+          {/* Volunteer opportunities */}
+          <Route path="/volunteer/add">
+            <AddMore dataset={mockVolunteerOpportunities()} />
+          </Route>
           <Route path="/volunteer" component={MyList} />
           <Route path="/account" component={CreateAccount} />
 
+          {/* Getting Help */}
+          <Route path="/help/all">
+            <AddMore dataset={mockHelpOptions()} />
+          </Route>
+          <Route path="/help" component={HelpHome} />
+
+          {/* Misc */}
           <Route path="/not-found" component={NotFound} />
           <Redirect from="**" to="/not-found" />
         </Switch>

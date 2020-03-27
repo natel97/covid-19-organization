@@ -65,3 +65,11 @@ body {
 .flex-3 {
   flex: 3;
 }
+
+.border-right {
+  border-right: 2px solid black;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
