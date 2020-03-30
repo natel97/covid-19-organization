@@ -1,0 +1,7 @@
+{
+  "build": {
+    "env": {
+      "REACT_APP_API": "@react_app_api"
+    }
+  }
+}

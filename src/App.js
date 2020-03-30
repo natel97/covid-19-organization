@@ -4,40 +4,67 @@ import Home from "./Routes/Home/Home";
 import NotFound from "./Routes/NotFound";
 import MyList from "./Routes/Volunteer/MyList";
 import Navbar from "./Components/Navbar";
-import CreateAccount from "./Routes/CreateAccount/CreateAccount";
+import CreateAccount from "./Routes/Auth/CreateAccount";
 import AddMore from "./Routes/Volunteer/AddMore";
 import HelpHome from "./Routes/GetHelp/HelpHome";
 import {
   mockVolunteerOpportunities,
   mockHelpOptions
 } from "./Components/MockData";
-
+import { store } from "./Redux/store";
+import { Provider, useSelector } from "react-redux";
+import Login from "./Routes/Auth/Login";
+import About from "./Routes/Home/About";
 export default () => {
   return (
     <div className="full-width full-height nav-padding">
-      <BrowserRouter>
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={Home} />
+      <Provider store={store}>
+        <BrowserRouter>
+          <Navbar />
+          <Switch>
+            <Route path="/" exact component={Landing} />
+            <Route path="/landing" component={Home} />
 
-          {/* Volunteer opportunities */}
-          <Route path="/volunteer/add">
-            <AddMore dataset={mockVolunteerOpportunities()} />
-          </Route>
-          <Route path="/volunteer" component={MyList} />
-          <Route path="/account" component={CreateAccount} />
+            {/* Authentication */}
+            <Route path="/auth/create" component={CreateAccount} />
+            <Route path="/auth" component={Login} />
 
-          {/* Getting Help */}
-          <Route path="/help/all">
-            <AddMore dataset={mockHelpOptions()} />
-          </Route>
-          <Route path="/help" component={HelpHome} />
+            {/* Volunteer opportunities */}
+            <AuthenticatedRoute path="/volunteer/add">
+              <AddMore dataset={mockVolunteerOpportunities()} />
+            </AuthenticatedRoute>
+            <AuthenticatedRoute path="/volunteer" component={MyList} />
 
-          {/* Misc */}
-          <Route path="/not-found" component={NotFound} />
-          <Redirect from="**" to="/not-found" />
-        </Switch>
-      </BrowserRouter>
+            {/* Getting Help */}
+            <AuthenticatedRoute path="/help/all">
+              <AddMore dataset={mockHelpOptions()} />
+            </AuthenticatedRoute>
+            <AuthenticatedRoute path="/help" component={HelpHome} />
+
+            {/* Misc */}
+            <AuthenticatedRoute path="/not-found" component={NotFound} />
+            <Redirect from="**" to="/not-found" />
+          </Switch>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
+};
+
+const AuthenticatedRoute = props => {
+  const auth = useSelector(s => s.token);
+  if (auth === null || auth === undefined) {
+    return <Redirect to="/auth" />;
+  }
+
+  return <Route {...props} />;
+};
+
+const Landing = () => {
+  const auth = useSelector(s => s.token);
+  if (auth === null || auth === undefined) {
+    return <About />;
+  }
+
+  return <Redirect to="/landing" />;
 };

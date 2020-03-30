@@ -6,11 +6,11 @@ export default () => {
     <div className="full-height flex-column justify-between text-center">
       <h1>Let's Irradicate COVID-19 Together</h1>
       <div className="justify-around flex-column">
-        <Link to="/volunteer">
-          <button className="success full-width">I want to help</button>
+        <Link to="/volunteer" className="button success full-width">
+          I want to help
         </Link>
-        <Link to="/help">
-          <button className="pseudo full-width">I want help</button>
+        <Link to="/help" className="pseudo button full-width">
+          I want help
         </Link>
       </div>
     </div>
