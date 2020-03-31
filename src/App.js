@@ -15,6 +15,7 @@ import { store } from "./Redux/store";
 import { Provider, useSelector } from "react-redux";
 import Login from "./Routes/Auth/Login";
 import About from "./Routes/Home/About";
+import TypeOptions from "./Routes/Volunteer/TypeOptions";
 export default () => {
   return (
     <div className="full-width full-height nav-padding">
@@ -33,7 +34,11 @@ export default () => {
             <AuthenticatedRoute path="/volunteer/add">
               <AddMore dataset={mockVolunteerOpportunities()} />
             </AuthenticatedRoute>
-            <AuthenticatedRoute path="/volunteer" component={MyList} />
+            <AuthenticatedRoute path="/volunteer" exact component={MyList} />
+            <AuthenticatedRoute
+              path="/volunteer/:type"
+              component={TypeOptions}
+            />
 
             {/* Getting Help */}
             <AuthenticatedRoute path="/help/all">

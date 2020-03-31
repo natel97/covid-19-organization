@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { createUser } from "../../Utils/API";
-import { setToken } from "../../Redux/reducer";
 import { useDispatch } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
+
+import { setToken } from "../../Redux/reducer";
+import { createUser } from "../../Utils/API";
 
 export default () => {
   const [error, setError] = useState("");
@@ -53,9 +54,9 @@ export default () => {
           />
           <input
             className="stack"
-            placeholder="Phone Number: 888 888 8888"
+            placeholder="Phone Number: 888-888-8888"
             type="tel"
-            pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             name="telephone"
             onChange={e => setForm({ ...form, phone: e.target.value })}
           />
@@ -107,5 +108,5 @@ const submitData = (e, form, setError, history, dispatch) => {
       dispatch(setToken({ token: data }));
       history.push("/", { newAccount: data });
     })
-    .catch(error => setError(error.response.data?.error));
+    .catch(error => setError(error.response.data.error));
 };

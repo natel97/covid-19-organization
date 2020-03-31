@@ -27,7 +27,7 @@ export default () => {
 };
 
 const BackAndHome = ({ pathname }) => {
-  const showBack = pathname !== "/landing" && pathname !== "/auth";
+  const showBack = pathname !== "/landing" && pathname !== "/";
 
   return (
     <>

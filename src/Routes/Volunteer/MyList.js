@@ -10,14 +10,20 @@ export default () => {
   return (
     <div className="flex-column full-height">
       <h3 className="text-center">My Volunteering Activities</h3>
-      <div style={{ background: "#ccc" }} className="flex-1 overflow-auto">
+      <div
+        style={{ background: "#ccc" }}
+        className="flex-1 overflow-auto flex-column"
+      >
         {activities
           .sort((a, b) => b.localDemand - a.localDemand)
           .map(({ name, description, localDemand }) => (
-            <button className={`${getDemandClass(localDemand)} full-width`}>
+            <Link
+              to={`/volunteer/${name}`}
+              className={`button ${getDemandClass(localDemand)} full-width`}
+            >
               <h2>{name}</h2>
               <div>{description}</div>
-            </button>
+            </Link>
           ))}
       </div>
       <Link to="/volunteer/add">

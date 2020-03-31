@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #444;
+  user-select: none;
 }
 
 .flex-column {
@@ -75,5 +76,13 @@ body {
 }
 
 .overflow-auto {
-  overflow: auto;
+  overflow-y: auto;
+}
+
+.snap-container {
+  scroll-snap-type: y mandatory;
+}
+
+.snap-item {
+  scroll-snap-align: start;
 }
