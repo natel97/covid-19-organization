@@ -66,7 +66,7 @@ const Agreement = ({ accept }) => {
         </header>
         <footer>
           <div className="flex-1">
-            This may be riddled with bugs and may not be guarenteed to be
+            This may be riddled with bugs and may not be guaranteed to be
             secure. All use is at your own risk. By clicking "I Agree" you
             accept that we accept no responsibility for this rag tag app meant
             to help people.

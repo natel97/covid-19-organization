@@ -47,7 +47,7 @@ export default () => {
               Click Here
             </Link>{" "}
             to log in or create an account. This site is pretty new so
-            functionality is not guarenteed.
+            functionality is not guaranteed.
           </div>
         </footer>
       </article>
