@@ -16,6 +16,7 @@ import { Provider, useSelector } from "react-redux";
 import Login from "./Routes/Auth/Login";
 import About from "./Routes/Home/About";
 import TypeOptions from "./Routes/Volunteer/TypeOptions";
+import UpdateNotifier from "./Components/UpdateNotifier";
 export default () => {
   return (
     <div className="full-width full-height nav-padding">
@@ -52,6 +53,7 @@ export default () => {
           </Switch>
         </BrowserRouter>
       </Provider>
+      <UpdateNotifier />
     </div>
   );
 };
