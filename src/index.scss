@@ -1,3 +1,7 @@
+@import "picnic/src/picnic";
+@import "picnic/src/plugins/nav/_plugin";
+@import "picnic/src/plugins/modal/_plugin";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,7 +9,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #444;
   user-select: none;
 }
 
